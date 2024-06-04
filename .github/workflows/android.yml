@@ -5,7 +5,7 @@ on:
     branches: [ "release" ]
   pull_request:
     branches: [ "release" ]
-  workflow_dispatch: # 手动触发   
+  workflow_dispatch: # 手动触发
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
     env:
       ANDROID_API_LEVEL: 30
       ANDROID_BUILD_TOOLS_VERSION: 30.0.3
-      ANDROID_SDK_ROOT: ${{ runner.temp }}/android-sdk
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
     steps:
       - name: Checkout repository
