@@ -1,10 +1,10 @@
-name: Android CI
+name: Test Build
 
 on:
-  push:
-    branches: [ "release" ]
-  pull_request:
-    branches: [ "release" ]
+#  push:
+#    branches: [ "release" ]
+#  pull_request:
+#    branches: [ "release" ]
   workflow_dispatch: # 手动触发
 
 jobs:
@@ -46,7 +46,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleRelease
 
-    - name: Prepare App
+      - name: Prepare App
         run: |
           mkdir -p ${{ github.workspace }}/apk/
           for file in `find ~ -name "*.apk" -print`; do
